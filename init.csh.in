@@ -68,5 +68,18 @@ if ($?version) then
   endif
 endif
 
+set PROXYHTTP=`grep ProxyHTTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
+
+if ( "$PROXYHTTP" != "" ) then
+  setenv HTTP_PROXY $PROXYHTTP
+  setenv http_proxy $PROXYHTTP
+endif
+
+set PROXYFTP=`grep ProxyFTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
+
+if ( "$PROXYFTP" != "" ) then
+  setenv FTP_PROXY $PROXYFTP
+  setenv ftp_proxy $PROXYFTP
+endif
 
 # eof

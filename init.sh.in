@@ -64,4 +64,22 @@ if [ -d BASEPATH/etc/profile.d ]; then
   unset i
 fi
 
+PROXYHTTP=`grep ProxyHTTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
+
+if [ "$PROXYHTTP" != "" ]; then
+  HTTP_PROXY=$PROXYHTTP
+  http_proxy=$PROXYHTTP
+
+  export HTTP_PROXY http_proxy
+fi
+
+PROXYFTP=`grep ProxyFTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
+
+if [ "$PROXYFTP" != "" ]; then
+  FTP_PROXY=$PROXYFTP
+  ftp_proxy=$PROXYFTP
+
+  export FTP_PROXY ftp_proxy
+fi
+
 # eof
