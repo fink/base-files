@@ -8,6 +8,7 @@
 #
 # Fink - a package manager that downloads source and installs it
 # Copyright (c) 2001 Christoph Pfisterer
+# Copyright (c) 2001-2002 The Fink Team
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -36,6 +37,14 @@ if ( $?INFOPATH ) then
   setenv INFOPATH BASEPATH/share/info:BASEPATH/info:$INFOPATH
 else
   setenv INFOPATH BASEPATH/share/info:BASEPATH/info:/usr/local/share/info:/usr/local/lib/info:/usr/local/info:/usr/share/info
+endif
+
+if ( -r BASEPATH/share/java/classpath ) then
+  if ( $?CLASSPATH ) then
+    setenv CLASSPATH `cat BASEPATH/share/java/classpath`:$CLASSPATH
+  else
+    setenv CLASSPATH `cat BASEPATH/share/java/classpath`
+  endif
 endif
 
 if ( $?PERL5LIB ) then
