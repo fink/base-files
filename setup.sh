@@ -1,6 +1,6 @@
 #!/bin/sh -e
 #
-# setup.sh - configure fink base-files package
+# setup.sh - configure base-files package
 #
 # Fink - a package manager that downloads source and installs it
 # Copyright (c) 2001 Christoph Pfisterer
