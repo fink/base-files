@@ -62,4 +62,11 @@ if ( -d BASEPATH/etc/profile.d ) then
   unset i nonomatch
 endif
 
+if ($?version) then
+  if ("$version" =~ tcsh*) then
+    complete fink 'n/fink/(install remove selfupdate update-all configure list apropos describe --help --version)/'
+  endif
+endif
+
+
 # eof
