@@ -1,5 +1,6 @@
 2005-03-02  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
+	* VERSION: Bumped base-files version to 1.9.6
 	* README.buildsystem, base-files.info.in: minor revision to buildsystem
 
 2005-03-01  Dave Morrison  <dmrrsn@users.sourceforge.net>
