@@ -56,10 +56,8 @@ if [ -z "$MANPATH" ]; then
   else
     MANPATH=`/usr/bin/manpath -q`
   fi
-  prepend_path MANPATH BASEPATH/share/man
-else
-  prepend_path MANPATH BASEPATH/share/man
 fi
+prepend_path MANPATH BASEPATH/share/man
 export MANPATH
 
 if [ -z "$INFOPATH" ]; then

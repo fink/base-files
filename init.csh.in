@@ -38,16 +38,14 @@ else
     setenv PATH BASEPATH/bin:BASEPATH/sbin:/bin:/sbin:/usr/bin:/usr/sbin
 endif
 
-if ( $?MANPATH) then
-  prepend_path MANPATH BASEPATH/share/man
-else
+if ( ! $?MANPATH ) then
   if (`uname -r | cut -d. -f1` > 7) then
     setenv MANPATH `/usr/bin/manpath`
   else
     setenv MANPATH `/usr/bin/manpath -q`
   endif
-  prepend_path MANPATH BASEPATH/share/man
 endif
+prepend_path MANPATH BASEPATH/share/man
 
 if ( $?INFOPATH ) then
   prepend_path INFOPATH BASEPATH/share/info:BASEPATH/info
