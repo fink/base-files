@@ -1,3 +1,8 @@
+2003-04-22  Dave Morrison <dmrrsn@users.sourceforge.net>
+
+	* init.csh.in, init.sh.in: Use /usr/bin/manpath to set the original
+	value of MANPATH when it is not already set (bug # 642692)
+
 2003-04-16  Max Horn  <max@quendi.de>
 
 	* VERSION: Bumped base-files version to 1.7.1.
