@@ -51,7 +51,11 @@ fi
 export PATH
 
 if [ -z "$MANPATH" ]; then
-  MANPATH=`/usr/bin/manpath`
+  if [ `uname -r | cut -d. -f1` -gt 7 ]; then
+    MANPATH=`/usr/bin/manpath`
+  else
+    MANPATH=`/usr/bin/manpath -q`
+  fi
   prepend_path MANPATH BASEPATH/share/man
 else
   prepend_path MANPATH BASEPATH/share/man

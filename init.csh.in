@@ -41,7 +41,11 @@ endif
 if ( $?MANPATH) then
   prepend_path MANPATH BASEPATH/share/man
 else
-  setenv MANPATH `/usr/bin/manpath`
+  if (`uname -r | cut -d. -f1` > 7) then
+    setenv MANPATH `/usr/bin/manpath`
+  else
+    setenv MANPATH `/usr/bin/manpath -q`
+  endif
   prepend_path MANPATH BASEPATH/share/man
 endif
 
