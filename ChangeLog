@@ -1,3 +1,7 @@
+2004-12-20  Dave Morrison  <dmrrsn@users.sourceforge.net>
+
+	* VERSION: Bumped base-files version to 1.9.5
+
 2004-12-17  Daniel Macks  <dmacks@netspace.org>
 
 	* init.csh.in, init.sh.in: Moved profile.d reading to after
