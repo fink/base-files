@@ -1,8 +1,7 @@
 Package: base-files
 Version: @VERSION@
 Revision: @REVISION@
-Source: %n-%v.tar
-NoSourceDirectory: true
+Source: @SOURCE@
 Essential: yes
 Source-MD5: @MD5@
 CompileScript: ./setup.sh %p
