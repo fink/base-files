@@ -1,5 +1,7 @@
 2001-10-01  Christoph Pfisterer  <cp@chrisp.de>
 
+	* VERSION: Bumped base-files version to 1.2.
+
 	* pager.in: New shell script, finds a sensible pager and runs it.
 	* editor.in: New shell script, finds a sensible editor and runs
 	it.
