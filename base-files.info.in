@@ -1,0 +1,25 @@
+Package: base-files
+Version: @VERSION@
+Revision: @REVISION@
+Source: %n-%v.tar
+NoSourceDirectory: true
+Essential: yes
+CompileScript: ./setup.sh %p
+InstallScript: ./install.sh %i
+#
+PostInstScript: <<
+# install info dir file
+if [ ! -f %p/share/info/dir ]; then
+  cp %p/share/base-files/dir-base %p/share/info/dir
+  chmod 644 %p/share/info/dir
+fi
+<<
+#
+Description: Directory infrastructure
+DescDetail: <<
+The base-files package contains the basic directory infrastructure for
+a Fink installation. It makes sure the usual directories are present
+and have the right permissions.
+<<
+License: GPL
+Maintainer: Christoph Pfisterer <chrisp@users.sourceforge.net>
