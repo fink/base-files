@@ -1,3 +1,7 @@
+2002-01-11  Max Horn  <max@quendi.de>
+
+	* VERSION: Bumped base-files version to 1.5.
+
 2002-01-10  Max Horn  <max@quendi.de>
 
 	* fink-release: moved to the packages module, where it fits better
