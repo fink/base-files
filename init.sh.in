@@ -58,6 +58,8 @@ if [ -z "$MANPATH" ]; then
   fi
 fi
 prepend_path MANPATH BASEPATH/share/man
+perlversion=`/usr/bin/perl -e 'printf("%vd\n", $^V)'`
+append_path MANPATH BASEPATH/lib/perl5/$perlversion/man
 export MANPATH
 
 if [ -z "$INFOPATH" ]; then

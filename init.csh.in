@@ -46,6 +46,8 @@ if ( ! $?MANPATH ) then
   endif
 endif
 prepend_path MANPATH BASEPATH/share/man
+set perlversion = `/usr/bin/perl -e 'printf("%vd\n", $^V)'`
+append_path MANPATH BASEPATH/lib/perl5/$perlversion/man
 
 if ( $?INFOPATH ) then
   prepend_path INFOPATH BASEPATH/share/info:BASEPATH/info
