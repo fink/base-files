@@ -31,7 +31,7 @@ my ($script, $cmd);
 ### check if we're unharmed
 
 my ($file);
-foreach $file (qw(fink-release dir-base init.sh.in setup.sh)) {
+foreach $file (qw(dir-base init.sh.in setup.sh)) {
   if (not -e $file) {
     print "ERROR: Package incomplete, '$file' is missing.\n";
     exit 1;
@@ -152,7 +152,7 @@ if (not -d "$basepath/src") {
 
 $script .=
   "tar -cf $basepath/src/base-files-$packageversion.tar ".
-  "COPYING fink-release init.csh.in init.sh.in dir-base ".
+  "COPYING init.csh.in init.sh.in dir-base ".
   "pager.in editor.in install.sh setup.sh\n";
 
 foreach $cmd (split(/\n/,$script)) {
