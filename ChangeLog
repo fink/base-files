@@ -1,3 +1,11 @@
+2001-10-01  Christoph Pfisterer  <cp@chrisp.de>
+
+	* pager.in: New shell script, finds a sensible pager and runs it.
+	* editor.in: New shell script, finds a sensible editor and runs
+	it.
+	* install.sh, setup.sh, inject.pl: Adjusted to install the new
+	scripts.
+
 2001-09-28  Christoph Pfisterer  <cp@chrisp.de>
 
 	* fink-release: Bumped distribution version to 0.3.0.

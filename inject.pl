@@ -153,7 +153,7 @@ if (not -d "$basepath/src") {
 $script .=
   "tar -cf $basepath/src/base-files-$packageversion.tar ".
   "COPYING fink-release init.csh.in init.sh.in dir-base ".
-  "install.sh setup.sh\n";
+  "pager.in editor.in install.sh setup.sh\n";
 
 foreach $cmd (split(/\n/,$script)) {
   next unless $cmd;   # skip empty lines

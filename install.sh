@@ -55,6 +55,9 @@ install -c -p -m 644 init.csh $basepath/bin/
 touch $basepath/etc/profile.d/dummy.sh
 chmod 644 $basepath/etc/profile.d/dummy.sh
 
+install -c -p -m 755 pager $basepath/bin/
+install -c -p -m 755 editor $basepath/bin/
+
 install -c -p -m 644 fink-release $basepath/etc/
 install -c -p -m 644 dir-base $basepath/share/base-files/
 install -c -p -m 644 COPYING $basepath/share/doc/base-files/

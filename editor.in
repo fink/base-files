@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -n "$EDITOR" ]; then
+  exec $EDITOR "$@"
+fi
+if [ -x "/usr/bin/pico" ]; then
+  exec pico "$@"
+fi
+exec vi "$@"

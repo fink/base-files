@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ -n "$PAGER" ]; then
+  exec $PAGER "$@"
+fi
+if [ -x "BASEPATH/bin/less" ]; then
+  exec BASEPATH/bin/less "$@"
+fi
+if [ -x "/usr/bin/less" ]; then
+  exec /usr/bin/less "$@"
+fi
+exec more "$@"
