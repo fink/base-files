@@ -1,3 +1,7 @@
+2003-12-06  Dave Morrison  <dmrrsn@users.sourceforge.net>
+
+	* VERSION: Bumped base-files version to 1.9.0.
+
 2003-12-05  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* init.csh.in, init.sh.in: Add $basepath/lib/perl5/darwin to PERL5LIB
