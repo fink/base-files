@@ -95,7 +95,7 @@ fi
 # read per-package scripts from BASEPATH/etc/profile.d
 if [ -d BASEPATH/etc/profile.d ]; then
   for i in BASEPATH/etc/profile.d/*.sh ; do
-    if [ -x $i ]; then
+    if [ -r $i -a -x $i ]; then
       . $i
     fi
   done

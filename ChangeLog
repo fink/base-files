@@ -1,3 +1,10 @@
+2003-11-04  Daniel Macks <dmacks@netspace.org>
+
+	* init.csh.in, init.sh.in: Fix permissions tests for profile.d
+	scripts. Add -r because they are loaded using a read process. Keep
+	-x to allow profile.d to contain non-loading (README, etc.) files
+	by installing them chmod 644 (part of my Patches #815900).
+
 2003-11-02  Daniel Macks  <dmacks@netspace.org>
 
 	* init.csh.in: Fix command-completion for 'fink' to match those
