@@ -5,7 +5,7 @@
 #
 # Fink - a package manager that downloads source and installs it
 # Copyright (c) 2001 Christoph Pfisterer
-# Copyright (c) 2001-2002 The Fink Team
+# Copyright (c) 2001-2003 The Fink Team
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@
 #
 
 $| = 1;
-use v5.6.0;  # perl 5.6.0 or newer required
+use 5.006;  # perl 5.6.0 or newer required
 use strict;
 
 my ($basepath, $packageversion, $packagerevision);
@@ -81,7 +81,7 @@ unless (-f "$basepath/bin/fink" and
 unshift @INC, "$basepath/lib/perl5";
 
 require Fink::Services;
-import Fink::Services qw(&read_config &execute);
+import Fink::Services qw(&read_config &execute &file_MD5_checksum);
 require Fink::Config;
 
 ### get version
@@ -122,26 +122,6 @@ if ($trees =~ /^\s*$/) {
   }
 }
 
-### create and copy description file
-
-print "Copying package description...\n";
-
-$script = "";
-if (not -d "$basepath/fink/dists/local/bootstrap/finkinfo") {
-  $script .= "mkdir -p $basepath/fink/dists/local/bootstrap/finkinfo\n";
-}
-
-$script .= "sed -e 's/\@VERSION\@/$packageversion/' -e 's/\@REVISION\@/$packagerevision/' <base-files.info.in >$basepath/fink/dists/local/bootstrap/finkinfo/base-files-$packageversion.info\n";
-
-foreach $cmd (split(/\n/,$script)) {
-  next unless $cmd;   # skip empty lines
-
-  if (&execute($cmd)) {
-    print "ERROR: Can't copy package description.\n";
-    exit 1;
-  }
-}
-
 ### create tarball for the package
 
 print "Creating tarball...\n";
@@ -161,6 +141,27 @@ foreach $cmd (split(/\n/,$script)) {
 
   if (&execute($cmd)) {
     print "ERROR: Can't create tarball.\n";
+    exit 1;
+  }
+}
+
+### create and copy description file
+
+print "Copying package description...\n";
+
+$script = "";
+if (not -d "$basepath/fink/dists/local/bootstrap/finkinfo") {
+  $script .= "mkdir -p $basepath/fink/dists/local/bootstrap/finkinfo\n";
+}
+
+my $md5 = &file_MD5_checksum("$basepath/src/base-files-$packageversion.tar");
+$script .= "sed -e 's/\@VERSION\@/$packageversion/' -e 's/\@REVISION\@/$packagerevision/' -e 's/\@MD5\@/$md5/' <base-files.info.in >$basepath/fink/dists/local/bootstrap/finkinfo/base-files-$packageversion.info\n";
+
+foreach $cmd (split(/\n/,$script)) {
+  next unless $cmd;   # skip empty lines
+
+  if (&execute($cmd)) {
+    print "ERROR: Can't copy package description.\n";
     exit 1;
   }
 }
