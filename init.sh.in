@@ -76,9 +76,9 @@ if [ -r BASEPATH/share/java/classpath ]; then
 fi
 
 if [ -z "$PERL5LIB" ]; then
-  PERL5LIB=BASEPATH/lib/perl5
+  PERL5LIB=BASEPATH/lib/perl5:BASEPATH/lib/perl5
 else
-  prepend_path PERL5LIB BASEPATH/lib/perl5
+  prepend_path PERL5LIB BASEPATH/lib/perl5:BASEPATH/lib/perl5/darwin
 fi
 export PERL5LIB
 

@@ -61,9 +61,9 @@ if ( -r BASEPATH/share/java/classpath ) then
 endif
 
 if ( $?PERL5LIB ) then
-  prepend_path PERL5LIB BASEPATH/lib/perl5
+  prepend_path PERL5LIB BASEPATH/lib/perl5:BASEPATH/lib/perl5/darwin
 else
-  setenv PERL5LIB BASEPATH/lib/perl5
+  setenv PERL5LIB BASEPATH/lib/perl5:BASEPATH/lib/perl5/darwin
 endif
 
 # Add X11 paths (but only if the directories are readable)
