@@ -67,7 +67,7 @@ export INFOPATH
 
 if [ -r BASEPATH/share/java/classpath ]; then
   if [ -z "$CLASSPATH" ]; then
-    CLASSPATH=`cat BASEPATH/share/java/classpath`
+    CLASSPATH=`cat BASEPATH/share/java/classpath`:.
   else
     add2classpath=`cat BASEPATH/share/java/classpath`
     prepend_path CLASSPATH $add2classpath

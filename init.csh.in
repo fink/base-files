@@ -56,7 +56,7 @@ if ( -r BASEPATH/share/java/classpath ) then
     set add2classpath = `cat BASEPATH/share/java/classpath`
     prepend_path CLASSPATH $add2classpath
   else
-    setenv CLASSPATH `cat BASEPATH/share/java/classpath`
+    setenv CLASSPATH `cat BASEPATH/share/java/classpath`:.
   endif
 endif
 

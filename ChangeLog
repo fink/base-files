@@ -1,3 +1,8 @@
+2004-08-09  Daniel Macks  <dmacks@netspace.org>
+
+	* Include "." (default when unset) when explicitly setting CLASSPATH
+	(Bugs #1005793)
+
 2004-04-10  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* VERSION: Bumped base-files version to 1.9.1
