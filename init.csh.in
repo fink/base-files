@@ -8,7 +8,7 @@
 #
 # Fink - a package manager that downloads source and installs it
 # Copyright (c) 2001 Christoph Pfisterer
-# Copyright (c) 2001-2002 The Fink Team
+# Copyright (c) 2001-2003 The Fink Team
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -25,40 +25,53 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
 
-set path = ( BASEPATH/bin BASEPATH/sbin $path /usr/X11R6/bin )
+# define append_path and prepend_path to add directory paths, e.g. PATH, MANPATH.
+# add to end of path
+alias append_path 'if ( $\!:1 !~ \!:2\:* && $\!:1 !~ *\:\!:2\:* && $\!:1 !~ *\:\!:2 && $\!:1 !~ \!:2 ) setenv \!:1 ${\!:1}\:\!:2'
+# add to front of path
+alias prepend_path 'if ( $\!:1 !~ \!:2\:* && $\!:1 !~ *\:\!:2\:* && $\!:1 !~ *\:\!:2 && $\!:1 !~ \!:2 ) setenv \!:1 \!:2\:${\!:1}; if ( $\!:1 !~ \!:2\:* ) setenv \!:1 \!:2`echo \:${\!:1} | /usr/bin/sed -e s%^\!:2\:%% -e s%:\!:2\:%:%g -e s%:\!:2\$%%`'
+
+# setup fink related paths. we assume that the fink directories exists.
+if ( $?PATH ) then
+    prepend_path PATH BASEPATH/bin:BASEPATH/sbin
+else
+    setenv PATH BASEPATH/bin:BASEPATH/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+endif
 
 if ( $?MANPATH) then
-  setenv MANPATH BASEPATH/share/man:BASEPATH/man:${MANPATH}:/usr/X11R6/man
+  prepend_path MANPATH BASEPATH/share/man
 else
-  setenv MANPATH BASEPATH/share/man:BASEPATH/man:/usr/local/share/man:/usr/local/man:/usr/share/man:/usr/X11R6/man
+  setenv MANPATH BASEPATH/share/man:/usr/share/man
 endif
 
 if ( $?INFOPATH ) then
-  setenv INFOPATH BASEPATH/share/info:BASEPATH/info:$INFOPATH
+  prepend_path INFOPATH BASEPATH/share/info:BASEPATH/info
 else
-  setenv INFOPATH BASEPATH/share/info:BASEPATH/info:/usr/local/share/info:/usr/local/lib/info:/usr/local/info:/usr/share/info
+  setenv INFOPATH BASEPATH/share/info:BASEPATH/info:/usr/share/info
 endif
 
 if ( -r BASEPATH/share/java/classpath ) then
   if ( $?CLASSPATH ) then
-    setenv CLASSPATH `cat BASEPATH/share/java/classpath`:$CLASSPATH
+    set add2classpath = `cat BASEPATH/share/java/classpath`
+    prepend_path CLASSPATH $add2classpath
   else
     setenv CLASSPATH `cat BASEPATH/share/java/classpath`
   endif
 endif
 
 if ( $?PERL5LIB ) then
-  setenv PERL5LIB BASEPATH/lib/perl5:$PERL5LIB
+  prepend_path PERL5LIB BASEPATH/lib/perl5
 else
   setenv PERL5LIB BASEPATH/lib/perl5
 endif
 
-# setting this is not neccessary and results in performance degradation
-#if ( $?DYLD_LIBRARY_PATH ) then
-#  setenv DYLD_LIBRARY_PATH BASEPATH/lib:$DYLD_LIBRARY_PATH
-#else
-#  setenv DYLD_LIBRARY_PATH BASEPATH/lib
-#endif
+# Add X11 paths (but only if the directories are readable)
+if ( -r /usr/X11R6/bin ) then
+    append_path PATH /usr/X11R6/bin
+endif
+if ( -r /usr/X11R6/man ) then
+    append_path MANPATH /usr/X11R6/man
+endif
 
 # read per-package scripts from BASEPATH/etc/profile.d
 if ( -d BASEPATH/etc/profile.d ) then
