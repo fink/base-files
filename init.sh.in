@@ -96,16 +96,6 @@ if [ -r /usr/X11R6/man ]; then
     export MANPATH
 fi
 
-# read per-package scripts from BASEPATH/etc/profile.d
-if [ -d BASEPATH/etc/profile.d ]; then
-  for i in BASEPATH/etc/profile.d/*.sh ; do
-    if [ -r $i -a -x $i ]; then
-      . $i
-    fi
-  done
-  unset i
-fi
-
 PROXYHTTP=`grep ProxyHTTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
 
 if [ "$PROXYHTTP" != "" ]; then
@@ -122,6 +112,16 @@ if [ "$PROXYFTP" != "" ]; then
   ftp_proxy=$PROXYFTP
 
   export FTP_PROXY ftp_proxy
+fi
+
+# read per-package scripts from BASEPATH/etc/profile.d
+if [ -d BASEPATH/etc/profile.d ]; then
+  for i in BASEPATH/etc/profile.d/*.sh ; do
+    if [ -r $i -a -x $i ]; then
+      . $i
+    fi
+  done
+  unset i
 fi
 
 # eof

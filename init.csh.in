@@ -80,19 +80,8 @@ endif
 
 if ($?version) then
   if ("$version" =~ tcsh*) then
-    complete fink 'n/fink/(install remove purge update selfupdate update-all configure list apropos describe index --help --version)/'
+    complete fink 'n/fink/(install remove purge update selfupdate update-all configure list apropos describe index validate --help --version)/'
   endif
-endif
-
-# read per-package scripts from BASEPATH/etc/profile.d
-if ( -d BASEPATH/etc/profile.d ) then
-  set nonomatch
-  foreach i ( BASEPATH/etc/profile.d/*.csh )
-    if ( -r $i && -x $i ) then
-      source $i
-    endif
-  end
-  unset i nonomatch
 endif
 
 set PROXYHTTP=`grep ProxyHTTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
@@ -107,6 +96,17 @@ set PROXYFTP=`grep ProxyFTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f
 if ( "$PROXYFTP" != "" ) then
   setenv FTP_PROXY $PROXYFTP
   setenv ftp_proxy $PROXYFTP
+endif
+
+# read per-package scripts from BASEPATH/etc/profile.d
+if ( -d BASEPATH/etc/profile.d ) then
+  set nonomatch
+  foreach i ( BASEPATH/etc/profile.d/*.csh )
+    if ( -r $i && -x $i ) then
+      source $i
+    endif
+  end
+  unset i nonomatch
 endif
 
 # eof
