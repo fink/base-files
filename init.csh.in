@@ -74,6 +74,12 @@ if ( -r /usr/X11R6/man ) then
     append_path MANPATH /usr/X11R6/man
 endif
 
+if ($?version) then
+  if ("$version" =~ tcsh*) then
+    complete fink 'n/fink/(install remove purge update selfupdate update-all configure list apropos describe index --help --version)/'
+  endif
+endif
+
 # read per-package scripts from BASEPATH/etc/profile.d
 if ( -d BASEPATH/etc/profile.d ) then
   set nonomatch
@@ -83,12 +89,6 @@ if ( -d BASEPATH/etc/profile.d ) then
     endif
   end
   unset i nonomatch
-endif
-
-if ($?version) then
-  if ("$version" =~ tcsh*) then
-    complete fink 'n/fink/(install remove selfupdate update-all configure list apropos describe --help --version)/'
-  endif
 endif
 
 set PROXYHTTP=`grep ProxyHTTP BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`

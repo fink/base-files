@@ -1,3 +1,11 @@
+2003-11-02  Daniel Macks  <dmacks@netspace.org>
+
+	* init.csh.in: Fix command-completion for 'fink' to match those
+	listed by 'fink --help' (part of Bugs #829520). Move the code that
+	sets command-completion to before the code that loads profile.d to
+	allow a fink package to override with an alternate completion
+	(part of Feature Requests #829533).
+
 2003-04-28  Max Horn  <max@quendi.de>
 
 	* VERSION: Bumped base-files version to 1.8.0.
