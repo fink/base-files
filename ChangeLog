@@ -1,3 +1,8 @@
+2004-11-01  Benjamin Reed  <ranger@befunk.com>
+
+	* init.csh.in, init.sh.in: -q is unnecessary, MANPATH should never 
+	be set there
+	
 2004-08-10  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* VERSION: Bumped base-files version to 1.9.2
