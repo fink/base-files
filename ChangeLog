@@ -1,3 +1,8 @@
+2001-11-02  Christoph Pfisterer  <cp@chrisp.de>
+
+	* fink-release: Bumped distribution version to 0.3.1.
+	* VERSION: Bumped base-files version to 1.3.
+
 2001-10-01  Christoph Pfisterer  <cp@chrisp.de>
 
 	* VERSION: Bumped base-files version to 1.2.
