@@ -8,6 +8,8 @@
 
 	* inject.pl: update syntax to "use 5.006" (from "use v5.6.0")
 
+	* base-files.info.in: Change Maintainer.
+
 2003-11-04  Daniel Macks <dmacks@netspace.org>
 
 	* init.csh.in, init.sh.in: Fix permissions tests for profile.d
