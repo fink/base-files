@@ -42,6 +42,7 @@ if ( $?MANPATH) then
   prepend_path MANPATH BASEPATH/share/man
 else
   setenv MANPATH `/usr/bin/manpath -q`
+  prepend_path MANPATH BASEPATH/share/man
 endif
 
 if ( $?INFOPATH ) then

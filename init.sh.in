@@ -52,6 +52,7 @@ export PATH
 
 if [ -z "$MANPATH" ]; then
   MANPATH=`/usr/bin/manpath -q`
+  prepend_path MANPATH BASEPATH/share/man
 else
   prepend_path MANPATH BASEPATH/share/man
 fi
