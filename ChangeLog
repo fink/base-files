@@ -1,3 +1,7 @@
+2003-04-14  Max Horn  <max@quendi.de>
+
+	* VERSION: Bumped base-files version to 1.7.
+
 2003-03-22  Max Horn  <max@quendi.de>
 
 	* init.csh.in, init.sh.in: Patch #683277  by Remi Mommsen  which allows
