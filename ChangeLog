@@ -1,3 +1,7 @@
+2005-08-05  Dave Morrison  <dmrrsn@users.sourceforge.net>
+
+	* VERSION: Bumped base-files version to 1.9.7
+	
 2005-07-01  Peter O'Gorman  <ogorman@users.sourceforge.net>
 
 	* init.sh.in, init.csh.in: Set DYLD_FALLBACK_LIBRARY_PATH to work
