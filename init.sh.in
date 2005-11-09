@@ -51,6 +51,7 @@ fi
 export PATH
 
 osMajorVer=`uname -r | cut -d. -f1`
+osMinorVer=`uname -r | cut -d. -f2`
 if [ -z "$MANPATH" ]; then
   if [ $osMajorVer -gt 7 ]; then
     MANPATH=`/usr/bin/manpath`
@@ -97,12 +98,12 @@ if [ -r /usr/X11R6/man ]; then
     export MANPATH
 fi
 
-# On Mac OS X 10.4 there is a dyld bug (rdar://problem/4139432)
+# On Mac OS X 10.4.{x|x<3} there is a dyld bug (rdar://problem/4139432)
 # where a library will not load if a library with a matching basename
 # is already loaded from one of the system paths,
 # the workaround is to set DYLD_FALLBACK_LIBRARY_PATH to :
 if [ -z "$DYLD_FALLBACK_LIBRARY_PATH" ]; then
-  if [ $osMajorVer -gt 7 ]; then
+  if [ $osMajorVer -eq 8 -a $osMinorVer -lt 3 ]; then
     DYLD_FALLBACK_LIBRARY_PATH=:
     export DYLD_FALLBACK_LIBRARY_PATH
   fi

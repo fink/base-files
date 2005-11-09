@@ -39,6 +39,7 @@ else
 endif
 
 set osMajorVersion = `uname -r | cut -d. -f1`
+set osMinorVersion = `uname -r | cut -d. -f2`
 if ( ! $?MANPATH ) then
   if ( $osMajorVersion > 7) then
     setenv MANPATH `/usr/bin/manpath`
@@ -79,12 +80,12 @@ if ( -r /usr/X11R6/man ) then
     append_path MANPATH /usr/X11R6/man
 endif
 
-# On Mac OS X 10.4 there is a dyld bug (rdar://problem/4139432)
+# On Mac OS X 10.4.{x|x<3} there is a dyld bug (rdar://problem/4139432)
 # where a library will not load if a library with a matching basename
 # is already loaded from one of the system paths,
 # the workaround is to set DYLD_FALLBACK_LIBRARY_PATH to :
 if ( ! $?DYLD_FALLBACK_LIBRARY_PATH ) then
-  if (  $osMajorVersion > 7) then
+  if (  $osMajorVersion == 8 && $osMinorVersion < 3 ) then
     setenv DYLD_FALLBACK_LIBRARY_PATH :
   endif
 endif

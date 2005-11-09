@@ -1,3 +1,9 @@
+2005-11-09  Matthew Sachs  <msachs@apple.com>
+
+	* init.sh.in, init.csh.in: Only set DYLD_FALLBACK_LIBRARY_PATH
+	on 10.4.{x|x<3}.
+	* VERSION: Bumped base-files version to 1.9.8
+
 2005-08-05  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* VERSION: Bumped base-files version to 1.9.7
