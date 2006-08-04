@@ -1,3 +1,7 @@
+2006-08-04  Daniel Macks  <dmacks@netspace.org>
+
+	* .cvsignore: Ignore the files created from .in templates.
+
 2005-11-09  Matthew Sachs  <msachs@apple.com>
 
 	* init.sh.in, init.csh.in: Only set DYLD_FALLBACK_LIBRARY_PATH
