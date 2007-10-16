@@ -1,3 +1,7 @@
+2007-10-16  Daniel Macks  <dmacks@netspace.org>
+
+	* *: Update FSF street address.
+
 2006-08-04  Daniel Macks  <dmacks@netspace.org>
 
 	* .cvsignore: Ignore the files created from .in templates.
