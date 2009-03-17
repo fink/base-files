@@ -72,6 +72,16 @@ else
   setenv PERL5LIB BASEPATH/lib/perl5:BASEPATH/lib/perl5/darwin
 endif
 
+# if user has chosen x86_64 as the architecture, then we do not set
+# VERSIONER_PERL_PREFER_32_BIT
+set ARCHITECTURE=`grep Architecture BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
+
+if ( $osMajorVersion > 9 ) then
+  if ( "$ARCHITECTURE" != "x86_64" ) then
+    setenv VERSIONER_PERL_PREFER_32_BIT yes
+  endif
+endif
+
 # Add X11 paths (but only if the directories are readable)
 if ( -r /usr/X11R6/bin ) then
     append_path PATH /usr/X11R6/bin

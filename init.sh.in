@@ -88,6 +88,17 @@ else
 fi
 export PERL5LIB
 
+# if user has chosen x86_64 as the architecture, then we do not set
+# VERSIONER_PERL_PREFER_32_BIT
+ARCHITECTURE=`grep Architecture BASEPATH/etc/fink.conf | grep -v "#" | cut -d " " -f2`
+
+if [ $osMajorVer -gt 9 ]; then
+  if [ "$ARCHITECTURE" != "x86_64" ]; then
+    VERSIONER_PERL_PREFER_32_BIT=yes
+    export VERSIONER_PERL_PREFER_32_BIT
+  fi
+fi
+
 # Add X11 paths (but only if the directories are readable)
 if [ -r /usr/X11R6/bin ]; then
     append_path PATH /usr/X11R6/bin

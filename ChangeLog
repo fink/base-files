@@ -1,6 +1,8 @@
 2009-03-16  Dave Morrison  <drm@finkproject.org>
 
 	* all: update Copyright
+	* init.sh.in, init.csh.in: set VERSIONER_PERL_PREFER_32_BIT on 
+	Darwin 10 unless user has chosen x86_64 as the architecture
 
 2007-10-16  Daniel Macks  <dmacks@netspace.org>
 
