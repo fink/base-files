@@ -1,3 +1,8 @@
+2009-03-17  Dave Morrison  <drm@finkproject.org>
+
+	* init.sh.in, init.csh.in: revert previous change: 
+	VERSIONER_PERL_PREFER_32_BIT now being handled within fink
+	
 2009-03-16  Dave Morrison  <drm@finkproject.org>
 
 	* all: update Copyright
