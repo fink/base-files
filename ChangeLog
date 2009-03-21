@@ -1,3 +1,7 @@
+2009-03-20  Dave Morrison  <drm@finkproject.org>
+
+	* VERSION: bumped base-files version to 1.9.10
+
 2009-03-17  Dave Morrison  <drm@finkproject.org>
 
 	* init.sh.in, init.csh.in: revert previous change: 
