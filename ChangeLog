@@ -4,13 +4,13 @@
 
 2009-03-17  Dave Morrison  <drm@finkproject.org>
 
-	* init.sh.in, init.csh.in: revert previous change: 
+	* init.sh.in, init.csh.in: revert previous change:
 	VERSIONER_PERL_PREFER_32_BIT now being handled within fink
-	
+
 2009-03-16  Dave Morrison  <drm@finkproject.org>
 
 	* all: update Copyright
-	* init.sh.in, init.csh.in: set VERSIONER_PERL_PREFER_32_BIT on 
+	* init.sh.in, init.csh.in: set VERSIONER_PERL_PREFER_32_BIT on
 	Darwin 10 unless user has chosen x86_64 as the architecture
 	* VERSION: bumped base-files version to 1.9.9
 
@@ -31,7 +31,7 @@
 2005-08-05  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* VERSION: Bumped base-files version to 1.9.7
-	
+
 2005-07-01  Peter O'Gorman  <ogorman@users.sourceforge.net>
 
 	* init.sh.in, init.csh.in: Set DYLD_FALLBACK_LIBRARY_PATH to work
@@ -44,7 +44,7 @@
 
 2005-03-01  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
-	* init.csh.in, init.sh.in: add BASEPATH/lib/perl5/$perlversion/man 
+	* init.csh.in, init.sh.in: add BASEPATH/lib/perl5/$perlversion/man
 	to the MANPATH
 
 2005-02-25  Daniel Macks  <dmacks@netspace.org>
@@ -67,18 +67,18 @@
 
 2004-11-08  Benjamin Reed  <ranger@befunk.com>
 
-	* init.csh.in, init.sh.in: bugfix for when /usr/local/man does not 
+	* init.csh.in, init.sh.in: bugfix for when /usr/local/man does not
 	exist
-	
+
 2004-11-02  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* VERSION: Bumped base-files version to 1.9.3
 
 2004-11-01  Benjamin Reed  <ranger@befunk.com>
 
-	* init.csh.in, init.sh.in: -q is unnecessary, MANPATH should never 
+	* init.csh.in, init.sh.in: -q is unnecessary, MANPATH should never
 	be set there
-	
+
 2004-08-10  Dave Morrison  <dmrrsn@users.sourceforge.net>
 
 	* VERSION: Bumped base-files version to 1.9.2
