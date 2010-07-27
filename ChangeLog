@@ -1,3 +1,8 @@
+2010-07-27  Daniel Macks  <dmacks@netspace.org>
+
+	* install.sh: make sure podfiles/ dir exists and "cat *.pod" from
+	UpdatePOD won't crash.
+
 2009-03-20  Dave Morrison  <drm@finkproject.org>
 
 	* VERSION: bumped base-files version to 1.9.10

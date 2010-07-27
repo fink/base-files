@@ -42,7 +42,7 @@ for dir in etc etc/profile.d bin sbin lib include \
 	   share/base-files \
 	   lib/perl5 lib/perl5/darwin lib/perl5/auto lib/perl5/darwin/auto \
 	   var var/run var/spool var/log src \
-	   share/doc/base-files ; do
+	   share/doc/base-files share/podfiles ; do
   mkdir $basepath/$dir
   chmod 755 $basepath/$dir
 done
@@ -61,6 +61,8 @@ install -c -p -m 755 editor $basepath/bin/
 
 install -c -p -m 644 dir-base $basepath/share/base-files/
 install -c -p -m 644 COPYING $basepath/share/doc/base-files/
+
+touch $basepath/share/podfiles/perllocal.system-perl.pod
 
 
 echo "Done."
