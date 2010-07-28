@@ -1,3 +1,8 @@
+2010-07-28  Daniel Macks  <dmacks@netspace.org>
+
+	* install.sh: extend podfiles dummy-file to all perl versions not
+	just versionless.
+
 2010-07-27  Daniel Macks  <dmacks@netspace.org>
 
 	* install.sh: make sure podfiles/ dir exists and "cat *.pod" from
