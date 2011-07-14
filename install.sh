@@ -68,7 +68,7 @@ install -c -p -m 644 COPYING $basepath/share/doc/base-files/
 # even if no longer even have fink pkg for it.
 for dir in podfiles \
            podfiles/5.8.1 podfiles/5.8.4 podfiles/5.8.6 \
-           podfiles/5.8.8 podfiles/5.10.0 ; do
+           podfiles/5.8.8 podfiles/5.10.0 podfiles/5.12.3 ; do
     mkdir -p $basepath/share/$dir
     chmod 755 $basepath/share/$dir
     touch $basepath/share/$dir/perllocal.base-files.pod

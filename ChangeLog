@@ -1,5 +1,9 @@
 2011-07-13  Daniel Macks  <dmacks@netspace.org>
 
+	* install.sh: podfiles stub for 5.12.3 (10.7 system-perl)
+
+2011-07-13  Daniel Macks  <dmacks@netspace.org>
+
 	* all: update Copyright
 
 2010-08-27  Daniel Macks  <dmacks@netspace.org>
