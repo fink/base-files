@@ -1,3 +1,7 @@
+2011-07-16  Dave Morrison  <drm@finkproject.org>
+
+	* VERSION: bumped base-files version to 1.9.12
+
 2011-07-13  Daniel Macks  <dmacks@netspace.org>
 
 	* install.sh: podfiles stub for 5.12.3 (10.7 system-perl)
