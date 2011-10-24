@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# inject.pl - perl script to install a CVS version of one of the
+# inject.pl - perl script to install a new version of one of the
 #             fink packages into an existing Fink tree
 #
 # Fink - a package manager that downloads source and installs it
