@@ -60,7 +60,6 @@ install -c -p -m 755 pager $basepath/bin/
 install -c -p -m 755 editor $basepath/bin/
 
 install -c -p -m 644 dir-base $basepath/share/base-files/
-install -c -p -m 644 COPYING $basepath/share/doc/base-files/
 
 # Require . and currently-supported perl versions (both OS X system
 # and fink-supplied). Should keep previously-supported (EOL'ed) OSX

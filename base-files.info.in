@@ -6,6 +6,7 @@ Essential: yes
 Source-MD5: @MD5@
 CompileScript: ./setup.sh %p
 InstallScript: ./install.sh %i
+DocFiles: COPYING NEWS README
 #
 PostInstScript: <<
 # install info dir file

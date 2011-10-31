@@ -44,7 +44,7 @@ foreach $file (qw(dir-base init.sh.in setup.sh)) {
   }
 }
 
-my $packagefiles =   "COPYING init.csh.in init.sh.in dir-base ".
+my $packagefiles =   "COPYING README NEWS init.csh.in init.sh.in dir-base ".
   "pager.in editor.in install.sh setup.sh";
 
 

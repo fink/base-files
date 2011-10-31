@@ -1,6 +1,7 @@
 X.Y (20??-??-??)
 
-	* Replaced ChangeLog by a more user-friendly NEWS file
+	* Added a NEWS file which summarizes the changes in each release.
+	* Added a minimalistic README file.
 
 1.9.12 (2011-07-16)
 
