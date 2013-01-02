@@ -73,7 +73,9 @@ else
 endif
 
 # Add X11 paths (but only if the directories are readable)
-if ( -r /usr/X11R6/bin ) then
+# Don't add /usr/X11R6/bin if it or another X11 executable path is already
+# available
+if ( -r /usr/X11R6/bin && "$PATH" !~ *X11*/bin ) then
     append_path PATH /usr/X11R6/bin
 endif
 if ( -r /usr/X11R6/man ) then
