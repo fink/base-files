@@ -31,7 +31,7 @@ alias append_path 'if ( $\!:1 !~ \!:2\:* && $\!:1 !~ *\:\!:2\:* && $\!:1 !~ *\:\
 # add to front of path
 alias prepend_path 'if ( $\!:1 !~ \!:2\:* && $\!:1 !~ *\:\!:2\:* && $\!:1 !~ *\:\!:2 && $\!:1 !~ \!:2 ) setenv \!:1 \!:2\:${\!:1}; if ( $\!:1 !~ \!:2\:* ) setenv \!:1 \!:2`echo \:${\!:1} | /usr/bin/sed -e s%^\!:2\:%% -e s%:\!:2\:%:%g -e s%:\!:2\$%%`'
 
-# setup fink related paths. we assume that the fink directories exists.
+# setup fink related paths. we assume that the fink directories exist.
 if ( $?PATH ) then
     prepend_path PATH BASEPATH/bin:BASEPATH/sbin
 else

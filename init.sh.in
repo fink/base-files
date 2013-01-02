@@ -42,7 +42,7 @@ prepend_path()
   fi
 }
 
-# setup fink related paths. we assume that the fink directories exists.
+# setup fink related paths. we assume that the fink directories exist.
 if [ -z "$PATH" ]; then
   PATH=BASEPATH/bin:BASEPATH/sbin:/bin:/sbin:/usr/bin:/usr/sbin
 else
