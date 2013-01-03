@@ -1,7 +1,9 @@
 1.9.13 (2013-??-??)
 
-	* Don't put /usr/X11R6/bin in the PATH if some "X11*bin" is already present there, 
-	  since the X11 distros on 10.5+ set the PATH up appropriately already by default.
+	* init.(c)sh: Don't put /usr/X11R6/bin in the PATH if some "X11*bin" is already 
+	  present there, since the X11 distros on 10.5+ set the PATH up appropriately already
+	  by default.
+	* add podfiles stub for perl 5.12.4 (10.8 system-perl)	  
 	* Added a NEWS file which summarizes the changes in each release.
 	* Added a minimalistic README file.
 
