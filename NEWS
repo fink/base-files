@@ -1,4 +1,4 @@
-1.9.13 (2013-??-??)
+1.9.13 (2013-01-09)
 
 	* init.(c)sh: Don't put /usr/X11R6/bin in the PATH if some "X11*bin" is already 
 	  present there, since the X11 distros on 10.5+ set the PATH up appropriately already
