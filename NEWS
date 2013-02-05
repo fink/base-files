@@ -1,3 +1,8 @@
+1.9.14 (2013-02-05)
+
+	* Some versions of sh-type shells don't grok '=~', so use a more widely compatible
+	  syntax.
+	
 1.9.13 (2013-01-09)
 
 	* init.(c)sh: Don't put /usr/X11R6/bin in the PATH if some "X11*bin" is already 
