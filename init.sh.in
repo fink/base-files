@@ -91,7 +91,7 @@ export PERL5LIB
 # Add X11 paths (but only if the directories are readable)
 # Don't add /usr/X11R6/bin if it or another X11 executable path is already
 # available
-if [ -r /usr/X11R6/bin ] && [[ ! $PATH =~ X11*/bin ]]; then
+if [ -r /usr/X11R6/bin ] &&  [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
     append_path PATH /usr/X11R6/bin
     export PATH
 fi
