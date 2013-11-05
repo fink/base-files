@@ -1,3 +1,7 @@
+1.9.15 (2013-11-05)
+
+	* add podfiles stub for perl 5.16.2 (10.9 system-perl)	  
+
 1.9.14 (2013-02-05)
 
 	* Some versions of sh-type shells don't grok '=~', so use a more widely compatible
