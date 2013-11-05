@@ -64,11 +64,12 @@ install -c -p -m 644 dir-base $basepath/share/base-files/
 # Require . and currently-supported perl versions (both OS X system
 # and fink-supplied). Should keep previously-supported (EOL'ed) OSX
 # system versions to aid upgraded (!= fresh-install fink) machines
-# even if no longer even have fink pkg for it.
+# even if we no longer even have fink pkg for it.
 for dir in podfiles \
            podfiles/5.8.1 podfiles/5.8.4 podfiles/5.8.6 \
            podfiles/5.8.8 podfiles/5.10.0 \
-           podfiles/5.12.3 podfiles/5.12.4 ; do
+           podfiles/5.12.3 podfiles/5.12.4 \
+           podfiles/5.16.2 ; do
     mkdir -p $basepath/share/$dir
     chmod 755 $basepath/share/$dir
     touch $basepath/share/$dir/perllocal.base-files.pod
