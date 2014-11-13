@@ -1,3 +1,7 @@
+1.9.16 (2014-11-13)
+
+	* add podfiles stub for perl 5.18.2 (10.10 system-perl)	  
+
 1.9.15 (2013-11-05)
 
 	* add podfiles stub for perl 5.16.2 (10.9 system-perl)	  
