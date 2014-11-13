@@ -69,7 +69,7 @@ for dir in podfiles \
            podfiles/5.8.1 podfiles/5.8.4 podfiles/5.8.6 \
            podfiles/5.8.8 podfiles/5.10.0 \
            podfiles/5.12.3 podfiles/5.12.4 \
-           podfiles/5.16.2 ; do
+           podfiles/5.16.2 podfiles/5.18.2 ; do
     mkdir -p $basepath/share/$dir
     chmod 755 $basepath/share/$dir
     touch $basepath/share/$dir/perllocal.base-files.pod
