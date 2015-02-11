@@ -90,7 +90,9 @@ export PERL5LIB
 
 # Add X11 paths (but only if the directories are readable)
 # Don't add them if an X11 path is already available.
-if [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
+# Unfortunately, some Bourne-type shells don't handle using =~ to test strings,
+# which would be more convenient.  Hopefully this will be sufficiently back-compatible.
+if [ ! -z "${PATH##*'X11'*bin}" ]; then
 	# Add appropriate paths.  We'll use the real path rather than convenience symlinks  
 	# We support /opt/X11 for 10.8 and later
 	if [ -r /opt/X11/bin ] &&  [ $osMajorVer -gt 11 ]; then
@@ -104,7 +106,7 @@ if [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
    		export PATH
 	fi
 fi
-if [ "`echo $PATH | grep 'X11.*/man'`x" = "x" ]; then
+if [ ! -z "${PATH##*'X11'*man}" ]; then
 	# Add appropriate paths.  We'll use the real path rather than convenience symlinks  
 	# We support /opt/X11 for 10.8 and later
 	if [ -r /opt/X11/share/man ] &&  [ $osMajorVer -gt 11 ]; then
