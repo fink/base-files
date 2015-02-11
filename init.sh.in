@@ -92,7 +92,7 @@ export PERL5LIB
 # Don't add them if an X11 path is already available.
 # Unfortunately, some Bourne-type shells don't handle using =~ to test strings,
 # which would be more convenient.  Hopefully this will be sufficiently back-compatible.
-if [ ! -z "${PATH##*'X11'*bin}" ]; then
+if [ ! -z "${PATH##*X11*bin}" ]; then
 	# Add appropriate paths.  We'll use the real path rather than convenience symlinks  
 	# We support /opt/X11 for 10.8 and later
 	if [ -r /opt/X11/bin ] &&  [ $osMajorVer -gt 11 ]; then
@@ -106,7 +106,7 @@ if [ ! -z "${PATH##*'X11'*bin}" ]; then
    		export PATH
 	fi
 fi
-if [ ! -z "${PATH##*'X11'*man}" ]; then
+if [ ! -z "${MANPATH##*X11*man}" ]; then
 	# Add appropriate paths.  We'll use the real path rather than convenience symlinks  
 	# We support /opt/X11 for 10.8 and later
 	if [ -r /opt/X11/share/man ] &&  [ $osMajorVer -gt 11 ]; then
