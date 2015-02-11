@@ -89,17 +89,35 @@ fi
 export PERL5LIB
 
 # Add X11 paths (but only if the directories are readable)
-# Don't add /usr/X11R6/bin if it or another X11 executable path is already
-# available
-if [ -r /usr/X11R6/bin ] &&  [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
-    append_path PATH /usr/X11R6/bin
-    export PATH
+# Don't add them if an X11 path is already available.
+if [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
+	# Add appropriate paths.  We'll use the real path rather than convenience symlinks  
+	# We support /opt/X11 for 10.8 and later
+	if [ -r /opt/X11/bin ] &&  [ $osMajorVer -gt 11 ]; then
+    	append_path PATH /opt/X11/bin
+   		export PATH
+	elif [ -r /usr/X11/bin ]; then
+    	append_path PATH /usr/X11/bin
+   		export PATH
+	elif [ -r /usr/X11R6/bin ]; then
+    	append_path PATH /usr/X11R6/bin
+   		export PATH
+	fi
 fi
-if [ -r /usr/X11R6/man ]; then
-    append_path MANPATH /usr/X11R6/man
-    export MANPATH
+if [ "`echo $PATH | grep 'X11.*/man'`x" = "x" ]; then
+	# Add appropriate paths.  We'll use the real path rather than convenience symlinks  
+	# We support /opt/X11 for 10.8 and later
+	if [ -r /opt/X11/share/man ] &&  [ $osMajorVer -gt 11 ]; then
+    	append_path PATH /opt/X11/share/man
+   		export PATH
+	elif [ -r /usr/X11/share/man ]; then
+    	append_path MANPATH /usr/X11/share/man
+    	export MANPATH
+	elif [ -r /usr/X11R6/share/man ]; then
+    	append_path MANPATH /usr/X11R6/share/man
+    	export MANPATH
+	fi
 fi
-
 # On Mac OS X 10.4.{x|x<3} there is a dyld bug (rdar://problem/4139432)
 # where a library will not load if a library with a matching basename
 # is already loaded from one of the system paths,
