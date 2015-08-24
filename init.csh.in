@@ -79,7 +79,7 @@ if ( "$PATH" !~ *X11*/bin ) then
     else if ( -r /usr/X11/bin ) then
 	append_path PATH /usr/X11/bin
     endif
-
+endif
 if ( -r /opt/X11/man ) then
     append_path MANPATH /opt/X11/man
 else if ( -r /usr/X11/man ) then
