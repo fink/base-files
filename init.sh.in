@@ -84,15 +84,25 @@ else
 fi
 export PERL5LIB
 
-# Add X11 paths (but only if the directories are readable)
-# Don't add /usr/X11R6/bin if it or another X11 executable path is already
-# available
-if [ -r /usr/X11R6/bin ] &&  [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
-    append_path PATH /usr/X11R6/bin
-    export PATH
+# Add X11 paths (first one found between /opt and /usr/X11).
+if [ "`echo $PATH | grep 'X11.*/bin'`x" = "x" ]; then
+    # For PATH, check for presence of *any* X11 entry present in var
+    # first. We support platforms with several possible prefixes (or
+    # symlinks to it), and don't want to add a different prefix or
+    # redundant link to it.
+    if [ -r /opt/X11/bin ]; then
+	append_path PATH /opt/X11/bin
+	export PATH
+    elif [ -r /usr/X11/bin ]; then
+	append_path PATH /usr/X11/bin
+	export PATH
+    fi
 fi
-if [ -r /usr/X11R6/man ]; then
-    append_path MANPATH /usr/X11R6/man
+if [ -r /opt/X11/man ]; then
+    append_path MANPATH /opt/X11/man
+    export MANPATH
+elif [ -r /usr/X11/man ]; then
+    append_path MANPATH /usr/X11/man
     export MANPATH
 fi
 

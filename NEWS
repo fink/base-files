@@ -1,4 +1,7 @@
-	* Scrap special settings for 10.4 and earlier
+	* init.(c)sh: Add support for /opt/X11 as preferred x11 prefix
+          for PATH and MANPATH, with /usr/X11 as fallback (scrap
+          /usr/X11R6, which was previously *only* supported prefix).
+	* init.(c)sh: Scrap special settings for 10.4 and earlier
 
 1.9.16 (2014-11-13)
 
