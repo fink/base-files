@@ -1,3 +1,5 @@
+1.9.17 (2015-10-01)
+
 	* init.(c)sh: Add support for /opt/X11 as preferred x11 prefix
           for PATH and MANPATH, with /usr/X11 as fallback (scrap
           /usr/X11R6, which was previously *only* supported prefix).
