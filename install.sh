@@ -4,7 +4,7 @@
 #
 # Fink - a package manager that downloads source and installs it
 # Copyright (c) 2001 Christoph Pfisterer
-# Copyright (c) 2001-2019 The Fink Team
+# Copyright (c) 2001-2020 The Fink Team
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -70,7 +70,7 @@ for dir in podfiles \
            podfiles/5.8.8 podfiles/5.10.0 \
            podfiles/5.12.3 podfiles/5.12.4 \
            podfiles/5.16.2 podfiles/5.18.2 \
-	   podfiles/5.18.4 ; do
+           podfiles/5.18.4 podfiles/5.28.2 ; do
     mkdir -p $basepath/share/$dir
     chmod 755 $basepath/share/$dir
     touch $basepath/share/$dir/perllocal.base-files.pod
