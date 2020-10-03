@@ -61,8 +61,8 @@ install -c -p -m 755 editor $basepath/bin/
 
 install -c -p -m 644 dir-base $basepath/share/base-files/
 
-# Require . and currently-supported perl versions (both OS X system
-# and fink-supplied). Should keep previously-supported (EOL'ed) OSX
+# Require . and currently-supported perl versions (both macOS system
+# and fink-supplied). Should keep previously-supported (EOL'ed) macOS
 # system versions to aid upgraded (!= fresh-install fink) machines
 # even if we no longer even have fink pkg for it.
 for dir in podfiles \
